@@ -19,11 +19,17 @@ export const getDaySlots = query.batch(z.string().date(), async (days) => {
 
     const rawSlots = await response.json() as AvailabilityList;
 
-    // Normalize slots to 30-minute duration as per spec
-    const slots: Slot[] = rawSlots.map((slot) => ({
-        start: slot.start,
-        end: addMinutes(new Date(slot.start), SLOT_DURATION_MINUTES).toISOString()
-    }));
+    const now = new Date();
+    const slots: Slot[] = rawSlots.reduce<Slot[]>((acc, slot) => {
+        const slotStart = new Date(slot.start);
+        if (slotStart > now) {
+            acc.push({
+                start: slot.start,
+                end: addMinutes(slotStart, SLOT_DURATION_MINUTES).toISOString()
+            });
+        }
+        return acc;
+    }, []);
 
     const slotsByDay = Object.groupBy(slots, (slot) => slot.start.slice(0, 10));
 
