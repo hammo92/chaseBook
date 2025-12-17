@@ -82,12 +82,11 @@
             </div>
 
             <form
-                {...bookMeeting.preflight(BookingSchema).enhance(async ({ data, submit, form }) => {
+                {...bookMeeting.preflight(BookingSchema).enhance(async ({ data, submit }) => {
                     try {
                         await submit();
                         emailRecipient = data.email;
                         booked = true;
-                        showToast("Your slot has been booked successfully!", "success");
                     } catch (error) {
                         console.log("error", error);
                         showToast("Something went wrong booking your slot, please try again", "error");
