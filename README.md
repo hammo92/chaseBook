@@ -80,7 +80,7 @@ src/lib/
 
 ## Improvements with More Time
 
-- **Accessibility** - Add keyboard navigation for slot selection, ARIA live regions for loading states
+- **Accessibility** - Add keyboard navigation for slot selection, ARIA live regions for loading states, respect reduced motion.
 - **Animations** - Smoother transitions between calendar and booking views
 - **Mobile Optimization** - Swipe gestures for day navigation
 - **Error Recovery** - Retry logic for failed API requests
