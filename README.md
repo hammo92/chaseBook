@@ -85,6 +85,7 @@ src/lib/
 - **Mobile Optimization** - Swipe gestures for day navigation
 - **Error Recovery** - Retry logic for failed API requests
 - **Testing** - Unit tests for remote functions, E2E tests for booking flow
+- **Form State** - Better handling for form validation on cancel and reopen
 
 ## Assumptions
 
