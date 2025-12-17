@@ -1,14 +1,7 @@
 import { form } from '$app/server';
 import { error } from '@sveltejs/kit';
-import { z } from 'zod';
+import { BookingSchema } from './schemas';
 
-const BookingSchema = z.object({
-    start: z.string(),
-    end: z.string(),
-    firstName: z.string().min(1, 'First name is required'),
-    lastName: z.string().min(1, 'Last name is required'),
-    email: z.string().email('Please enter a valid email'),
-});
 
 export const bookMeeting = form(BookingSchema, async ({ start, end, firstName, lastName, email }) => {
     const response = await fetch('https://calendar.meetchase.ai/api/meetings', {

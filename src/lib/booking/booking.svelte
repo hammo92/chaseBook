@@ -7,6 +7,7 @@
     import { Button } from '$lib/components/button';
     import { untrack } from 'svelte';
     import { showToast } from '$lib/toaster';
+    import { BookingSchema } from './schemas';
 
     let {
         day,
@@ -81,12 +82,14 @@
             </div>
 
             <form
-                {...bookMeeting.enhance(async ({ data, submit }) => {
+                {...bookMeeting.preflight(BookingSchema).enhance(async ({ data, submit, form }) => {
                     try {
                         await submit();
                         emailRecipient = data.email;
                         booked = true;
+                        showToast("Your slot has been booked successfully!", "success");
                     } catch (error) {
+                        console.log("error", error);
                         showToast("Something went wrong booking your slot, please try again", "error");
                     }
                 })}
