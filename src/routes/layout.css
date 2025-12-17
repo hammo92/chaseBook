@@ -1,0 +1,20 @@
+@import 'tailwindcss';
+@import 'tippy.js/dist/tippy.css';
+@import 'tippy.js/animations/scale.css';
+@import 'tippy.js/themes/light.css';
+@plugin '@tailwindcss/forms';
+@plugin '@tailwindcss/typography';
+
+@theme {
+    /* Chase Brand Colors */
+    --color-chase-400: #F05252;
+    --color-chase-500: #E54D4D;
+    --color-chase-600: #DC2626;
+
+    --color-navy-900: #1E1B4B;
+    --color-navy-800: #312E81;
+}
+
+.tippy-box[data-theme~='light'] .tippy-content {
+    padding: 8px 12px;
+}
