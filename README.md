@@ -86,6 +86,7 @@ src/lib/
 - **Error Recovery** - Retry logic for failed API requests
 - **Testing** - Unit tests for remote functions, E2E tests for booking flow
 - **Form State** - Better handling for form validation on cancel and reopen
+- **Data Freshness** - Implement polling to ensure slots availability is correct
 
 ## Assumptions
 
