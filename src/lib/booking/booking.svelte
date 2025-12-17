@@ -88,7 +88,6 @@
                         emailRecipient = data.email;
                         booked = true;
                     } catch (error) {
-                        console.log("error", error);
                         showToast("Something went wrong booking your slot, please try again", "error");
                     }
                 })}
