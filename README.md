@@ -72,18 +72,16 @@ src/lib/
 
 ## Trade-offs
 
-1. **Remote Functions (Experimental)** - Used SvelteKit's experimental `query`/`form` APIs for cleaner data fetching. Trade-off: API may change before stable release.
+1. **Remote Functions (Experimental)** - Used SvelteKit's experimental `query`/`form` APIs for cleaner data fetching. Trade-off: API may change before stable release but this is unlikely.
 
 2. **Single Attendee** - The booking form collects one attendee. The API supports multiple, but for a prospect booking their own meeting, one is sufficient.
 
-3. **No Time Zone Handling** - Times display as-is from the API. In production, would need proper timezone conversion based on user's locale.
+3. **No Time Zone Handling** - Times display as-is from the API. In production, would need proper timezone conversion based on user's locale or to present the timezone.
 
 ## Improvements with More Time
 
 - **Accessibility** - Add keyboard navigation for slot selection, ARIA live regions for loading states
 - **Animations** - Smoother transitions between calendar and booking views
-- **Confirmation Email Preview** - Show what the confirmation email will look like
-- **Calendar Integration** - "Add to Google Calendar" / "Add to Outlook" buttons after booking
 - **Mobile Optimization** - Swipe gestures for day navigation
 - **Error Recovery** - Retry logic for failed API requests
 - **Testing** - Unit tests for remote functions, E2E tests for booking flow
