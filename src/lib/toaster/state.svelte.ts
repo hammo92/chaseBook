@@ -23,7 +23,6 @@ class Toaster {
     }
 
     addToast(message: string, type: 'info' | 'success' | 'error' = "success", duration: number = 3000) {
-        console.log("Adding toast:", { message, type, duration });
         const id = Date.now();
         this.#queue.push({ id, message, type, duration });
 
