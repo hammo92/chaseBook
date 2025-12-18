@@ -32,6 +32,7 @@ Used `query.batch` to solve the N+1 problem when fetching availability. Instead 
 ### Progressive Enhancement
 The booking form uses SvelteKit's `form` remote function, which provides:
 - Server-side validation
+- Client-side validation
 - Optimistic UI updates
 - Automatic pending states
 - Works without JavaScript (progressive enhancement)
